@@ -1,0 +1,29 @@
+[project]
+name = "k-lingo-finetuning"
+version = "0.1.0"
+description = "한국어 교육과정 기반 숙달도 조절 모델 학습 프로젝트"
+readme = "README.md"
+requires-python = ">=3.11"
+# 핵심 라이브러리 선언
+dependencies = [
+    "torch",
+    "torchvision",
+    "torchaudio",
+    "unsloth",
+    "transformers",
+    "trl<0.9.0",
+    "peft",
+    "accelerate",
+    "bitsandbytes",
+    "xformers<0.0.29",
+]
+
+[tool.uv]
+# 특정 패키지를 PyPi가 아닌 Git이나 특정 URL에서 가져오도록 설정
+sources = { unsloth = { git = "https://github.com/unslothai/unsloth.git" } }
+# PyTorch를 CUDA 12.1용으로 설치하도록 인덱스 지정
+index-url = "https://download.pytorch.org/whl/cu121"
+
+[tool.uv.pip]
+# 의존성 충돌 방지를 위한 컴파일 옵션
+no-deps = ["xformers", "trl", "peft", "accelerate", "bitsandbytes"]
