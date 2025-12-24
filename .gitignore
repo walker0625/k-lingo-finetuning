@@ -9,3 +9,4 @@ wheels/
 # Virtual environments
 .venv
 finetuning/unsloth_compiled_cache
+.env
