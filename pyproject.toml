@@ -19,6 +19,6 @@ dependencies = [
 
 [tool.uv]
 # 특정 패키지를 PyPi가 아닌 Git이나 특정 URL에서 가져오도록 설정
-sources = { unsloth = { gidt = "https://github.com/unslothai/unsloth.git" } }
+sources = { unsloth = { git = "https://github.com/unslothai/unsloth.git" } }
 # PyTorch를 CUDA 12.1용으로 설치하도록 인덱스 지정
 index-url = "https://download.pytorch.org/whl/cu121"
